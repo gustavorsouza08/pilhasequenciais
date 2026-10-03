@@ -1,0 +1,47 @@
+#include <iostream>
+#include <stack>
+
+using namespace std;
+
+int main() {
+
+    stack<int> P1;
+
+    int numero;
+
+    cout << "Digite numeros positivos." << endl;
+    cout << "Digite 0 para parar." << endl;
+
+    while (true) {
+
+        cin >> numero;
+
+        if (numero == 0) {
+            break;
+        }
+
+        if (numero > 0) {
+            P1.push(numero);
+        }
+        else {
+            cout << "Digite apenas numeros positivos." << endl;
+        }
+    }
+
+    cout << "Numeros pares:" << endl;
+
+    while (!P1.empty()) {
+
+        int valor = P1.top();
+
+        P1.pop();
+
+        if (valor % 2 == 0) {
+            cout << valor << " ";
+        }
+    }
+
+    cout << endl;
+
+    return 0;
+}
